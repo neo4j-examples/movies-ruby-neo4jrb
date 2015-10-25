@@ -4,14 +4,14 @@ This example demonstrates how to map node and relationships to Ruby classes.
 
 ## How to install
 
-`bundle install`
+    bundle install
 
 ## How to run
 
     # with rackup
     NEO4J_USERNAME=username NEO4J_PASSWORD=password bundle exec rackup config.ru
 
-    # with shotgun
+    # with shotgun for for development / reloading
     NEO4J_USERNAME=username NEO4J_PASSWORD=password bundle exec shotgun config.ru
 
 If your neo4j server is not running on `localhost:7474` then you can specify an
