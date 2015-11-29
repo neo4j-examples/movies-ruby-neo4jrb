@@ -4,10 +4,10 @@ GEM
     active_attr (0.8.5)
       activemodel (>= 3.0.2, < 5.0)
       activesupport (>= 3.0.2, < 5.0)
-    activemodel (4.2.4)
-      activesupport (= 4.2.4)
+    activemodel (4.2.5)
+      activesupport (= 4.2.5)
       builder (~> 3.1)
-    activesupport (4.2.4)
+    activesupport (4.2.5)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -26,21 +26,21 @@ GEM
     httparty (0.13.7)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    httpclient (2.6.0.1)
+    httpclient (2.7.0.1)
     i18n (0.7.0)
     json (1.8.3)
     method_source (0.8.2)
-    minitest (5.8.1)
+    minitest (5.8.3)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    neo4j (5.2.11)
+    neo4j (6.0.1)
       active_attr (~> 0.8)
       activemodel (~> 4)
       activesupport (~> 4)
-      neo4j-core (~> 5.1.0)
+      neo4j-core (~> 6.0.0.rc.1)
       orm_adapter (~> 0.5.0)
-    neo4j-core (5.1.7)
+    neo4j-core (6.0.0)
       activesupport
       faraday (~> 0.9.0)
       faraday_middleware (~> 0.9.1)
@@ -85,7 +85,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  neo4j (~> 5.2.0)
+  neo4j (~> 6.0.0)
   pry
   shotgun
   sinatra

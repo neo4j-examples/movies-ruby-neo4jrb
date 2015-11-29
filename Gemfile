@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'sinatra'
 
-gem 'neo4j', '~>5.2.0' #git: 'git@github.com:neo4jrb/neo4j.git'
+gem 'neo4j', '~> 6.0.0'
 
 group 'development' do
   gem 'pry'
