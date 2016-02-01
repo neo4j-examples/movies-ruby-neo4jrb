@@ -10,6 +10,8 @@ This example demonstrates how to map node and relationships to Ruby classes.
 
 In your Neo4j web console UI you should type `:play movies` to load the data into your database.
 
+Then to start up the web server:
+
     # with rackup
     NEO4J_URL=http://username:password@host:port bundle exec rackup config.ru
 
