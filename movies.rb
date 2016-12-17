@@ -1,15 +1,25 @@
 require 'sinatra'
 require 'neo4j'
+require 'neo4j/session_manager'
+
+neo4j_url = ENV['NEO4J_URL'] || 'http://localhost:7474'
+
+Neo4j::Core::CypherSession::Adaptors::Base.subscribe_to_query(&method(:puts))
+
+adaptor_type = neo4j_url.match(/^bolt:/) ? :bolt : :http
+Neo4j::ActiveBase.on_establish_session do
+  Neo4j::SessionManager.open_neo4j_session(adaptor_type, neo4j_url)
+end
+
+session = Neo4j::ActiveBase.current_session
+
+session.query('CREATE CONSTRAINT ON (m:Movie) ASSERT m.title IS UNIQUE')
+session.query('CREATE CONSTRAINT ON (p:Person) ASSERT p.name IS UNIQUE')
+
 require './models'
 
 set :root, File.dirname(__FILE__)
 set :public_folder, File.dirname(__FILE__) + '/static'
-
-neo4j_url = ENV['NEO4J_URL'] || 'http://localhost:7474'
-neo4j_username = ENV['NEO4J_USERNAME'] || 'neo4j'
-neo4j_password = ENV['NEO4J_PASSWORD'] || 'neo4j'
-
-session = Neo4j::Session.open(:server_db, neo4j_url, basic_auth: {username: neo4j_username, password: neo4j_password})
 
 get '/' do
   send_file File.expand_path('index.html', settings.public_folder)

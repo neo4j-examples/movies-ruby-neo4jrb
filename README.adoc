@@ -16,8 +16,11 @@ Then to start up the web server:
     # with shotgun for for development / reloading
     NEO4J_URL=http://username:password@host:port bundle exec shotgun config.ru
 
-If your neo4j server is not running on `localhost:7474` then you can specify an
-alternate location with an environment variable named `NEO4J_URL`.
+If your neo4j server is not running on `http://localhost:7474` then you can specify an
+alternate location with an environment variable named `NEO4J_URL`.  You can use either `http` or `bolt` like so:
+
+    NEO4J_URL=http://neo4j:password@localhost:7474
+    NEO4J_URL=bolt://neo4j:password@localhost:7687
 
 ## Design
 
